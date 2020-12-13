@@ -43,6 +43,12 @@ const TutorialModal = () => {
             link with the new value. Just send them the link after you make all
             your changes.
           </p>
+          <h4>Other</h4>
+          <p>
+            Have a question, improvement feature request or find a bug? Submit
+            an issue{" "}
+            <a href="https://github.com/kmccullen97/reval/issues">here</a>.
+          </p>
         </Modal.Body>
         <Modal.Footer className={isDarkMode ? "dark" : ""}>
           <Button variant="secondary" onClick={handleClose}>
