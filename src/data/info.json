@@ -1,0 +1,18 @@
+{
+  "upFrontCost": "Total amount invested into the property.",
+  "propertyManager": "Monthly property management fee. This is usually a fixed percent of collected rent.",
+  "leaseLength": "Typical lease length in years.",
+  "leaseRenewalFee": "Fee the property manager collects to resign the current tenant to a new lease. This is usually a fixed percent of the first months rent of the new lease.",
+  "turnover": "Average length a tenant will stay in years.",
+  "procurementFee": "Fee the property manager collects to find a new tenant if the property becomes vacant. This is usually a fixed percent of the first months rent of the new lease.",
+  "additionalPropertyManagementExpense": "The average monthly additional cost of property manager fees.",
+  "mortgageTerm": "The length of the mortgage in years.",
+  "insurance": "Yearly insurance premium.",
+  "propertyTax": "Yearly property taxes.",
+  "cashFlow": "Expected monthly cash flow of rent minus known costs. Known costs include property management fee, mortgage, insurance, and taxes).",
+  "cashOnCash": "Percent return based on Cash Flow",
+  "equityYearOne": "Total equity gained in the first year of ownership.",
+  "vacancyRate": "Rate at which the property is vacant.",
+  "majorMinorCapEx": "Major and Minor repairs fund for the property.",
+  "mediumTerm": "Expected monthly cash flow of rent minus know and unknown costs. Unknown costs include additional property management expense, vacancy, and major/minor capital expenditures"
+}
