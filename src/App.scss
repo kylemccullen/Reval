@@ -21,11 +21,40 @@ body,
 }
 
 .dark {
-  background-color: #333;
-  color: #eee;
+  $dark: #333;
+  $light: #eee;
+  background-color: $dark;
+  color: $light;
 
   &.modal-header {
     border-bottom: 1px solid gray;
+  }
+
+  $popover-border-color: rgb(102, 102, 102);
+  &.popover {
+    border-color: $popover-border-color;
+
+    &.top {
+      .arrow:after {
+        border-top-color: $dark;
+      }
+      .arrow:before {
+        border-top-color: $popover-border-color;
+      }
+    }
+    &.right {
+      .arrow:after {
+        border-right-color: $dark;
+      }
+      .arrow:before {
+        border-right-color: $popover-border-color;
+      }
+    }
+    .popover-body,
+    .popover-header {
+      background-color: $dark;
+      color: $light;
+    }
   }
 
   .close {

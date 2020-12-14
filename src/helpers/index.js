@@ -38,86 +38,81 @@ const calculateEquityGainYearOne = (p, r, n) => {
 };
 
 export const evaluateData = (data) => {
-  const evalData = {
-    purchasePrice: parseFloat(data.purchasePrice),
-    additionalCosts: parseFloat(data.additionalCosts),
-    rent: parseFloat(data.rent),
-    mortgageRate: parseFloat(data.mortgageRate),
-    mortgageTerm: parseFloat(data.mortgageTerm),
-    leaseLength: parseFloat(data.leaseLength),
-    turnover: parseFloat(data.turnover),
-    vacancyRate: parseFloat(data.vacancyRate),
-  };
-  evalData.downPayment = calcValueOrPercent(
-    data.downPayment,
-    evalData.purchasePrice
+  const purchasePrice = parseFloat(data.purchasePrice);
+  const additionalCosts = parseFloat(data.additionalCosts);
+  const rent = parseFloat(data.rent);
+  const mortgageRate = parseFloat(data.mortgageRate);
+  const mortgageTerm = parseFloat(data.mortgageTerm);
+  const leaseLength = parseFloat(data.leaseLength);
+  const turnover = parseFloat(data.turnover);
+  const vacancyRate = parseFloat(data.vacancyRate);
+  const downPayment = calcValueOrPercent(data.downPayment, purchasePrice);
+  const closingCosts = calcValueOrPercent(data.closingCosts, purchasePrice);
+  const upFrontCost = downPayment + closingCosts + additionalCosts;
+  const propertyManager = calcValueOrPercent(data.propertyManager, rent);
+  const loanBalance = purchasePrice - downPayment;
+  const mortgagePayment = calculateMortgagePayment(
+    loanBalance,
+    mortgageRate,
+    mortgageTerm
   );
-  evalData.closingCosts = calcValueOrPercent(
-    data.closingCosts,
-    evalData.purchasePrice
+  const insurance = calcValueOrPercent(data.insurance, purchasePrice);
+  const propertyTax = calcValueOrPercent(data.propertyTax, purchasePrice);
+  const cashFlow =
+    rent - propertyManager - mortgagePayment - (insurance + propertyTax) / 12;
+  const cashOnCash = (cashFlow * 12) / upFrontCost;
+  const leaseRenewalFee = calcValueOrPercent(data.leaseRenewalFee, rent);
+  const procurementFee = calcValueOrPercent(data.procurementFee, rent);
+  const additionalPropertyManagementExpense =
+    (leaseRenewalFee / leaseLength + procurementFee / turnover) / 12;
+  const equityYearOne = calculateEquityGainYearOne(
+    loanBalance,
+    mortgageRate / 12,
+    mortgageTerm * 12
   );
-  evalData.upFrontCost =
-    evalData.downPayment + evalData.closingCosts + evalData.additionalCosts;
-  evalData.propertyManager = calcValueOrPercent(
-    data.propertyManager,
-    evalData.rent
-  );
-  evalData.loanBalance = evalData.purchasePrice - evalData.downPayment;
-  evalData.mortgagePayment = calculateMortgagePayment(
-    evalData.loanBalance,
-    evalData.mortgageRate,
-    evalData.mortgageTerm
-  );
-  evalData.insurance = calcValueOrPercent(
-    data.insurance,
-    evalData.purchasePrice
-  );
-  evalData.propertyTax = calcValueOrPercent(
-    data.propertyTax,
-    evalData.purchasePrice
-  );
-  evalData.cashFlow =
-    evalData.rent -
-    evalData.propertyManager -
-    evalData.mortgagePayment -
-    (evalData.insurance + evalData.propertyTax) / 12;
-  evalData.cashOnCash = (evalData.cashFlow * 12) / evalData.upFrontCost;
-  evalData.leaseRenewalFee = calcValueOrPercent(
-    data.leaseRenewalFee,
-    evalData.rent
-  );
-  evalData.procurementFee = calcValueOrPercent(
-    data.procurementFee,
-    evalData.rent
-  );
-  evalData.additionalPropertyManagementExpense =
-    (evalData.leaseRenewalFee / evalData.leaseLength +
-      evalData.procurementFee / evalData.turnover) /
-    12;
-  evalData.equityYearOne = calculateEquityGainYearOne(
-    evalData.loanBalance,
-    evalData.mortgageRate / 12,
-    evalData.mortgageTerm * 12
-  );
-  evalData.majorMinorCapEx = calcValueOrPercent(
-    data.majorMinorCapEx,
-    evalData.rent
-  );
-  evalData.mediumTerm =
-    evalData.cashFlow -
-    evalData.additionalPropertyManagementExpense -
-    evalData.rent * evalData.vacancyRate -
-    evalData.majorMinorCapEx;
+  const majorMinorCapEx = calcValueOrPercent(data.majorMinorCapEx, rent);
+  const mediumTerm =
+    cashFlow -
+    additionalPropertyManagementExpense -
+    rent * vacancyRate -
+    majorMinorCapEx;
+  const mediumReturn = (mediumTerm * 12) / upFrontCost;
 
   const warnings = {};
-  if (evalData.downPayment / 0.2 < evalData.purchasePrice) {
+  if (downPayment / 0.2 < purchasePrice) {
     warnings.downPayment =
       "Most lenders require a down payment of at least 20%.";
   }
-  if (evalData.mortgageTerm < 1) {
+  if (mortgageTerm < 1) {
     warnings.equityYearOne =
       "Can't calculate equity gained in the first year if the mortgage term is less than one year.";
   }
+
+  const evalData = {
+    purchasePrice,
+    additionalCosts,
+    rent,
+    mortgageRate,
+    mortgageTerm,
+    leaseLength,
+    turnover,
+    vacancyRate,
+    downPayment,
+    closingCosts,
+    upFrontCost,
+    mortgagePayment,
+    insurance,
+    propertyTax,
+    cashFlow,
+    cashOnCash,
+    leaseRenewalFee,
+    procurementFee,
+    additionalPropertyManagementExpense,
+    equityYearOne,
+    majorMinorCapEx,
+    mediumTerm,
+    mediumReturn,
+  };
 
   return [evalData, warnings];
 };

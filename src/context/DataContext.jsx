@@ -35,6 +35,9 @@ export const DataProvider = ({ children }) => {
     const urlParams = new URLSearchParams(window.location.search);
     const initialData = {};
     Object.keys(defaults).forEach((key) => {
+      if (key === "name" && urlParams.get(key) !== null) {
+        document.title = `Reval - ${urlParams.get(key)}`;
+      }
       initialData[key] = urlParams.get(key)
         ? urlParams.get(key)
         : defaults[key];
@@ -43,6 +46,9 @@ export const DataProvider = ({ children }) => {
   }, []);
 
   const setDataValue = (name, value) => {
+    if (name === "name") {
+      document.title = `Reval - ${value}`;
+    }
     const updatedData = {
       ...data,
       [name]: value,
