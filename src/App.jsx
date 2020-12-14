@@ -17,13 +17,13 @@ const App = () => {
       <Navbar />
       <div className="content container my-3">
         <div className="row">
-          <div className="col">
+          <div className="col-12 col-md-4">
             <Investment />
           </div>
-          <div className="col">
+          <div className="col-12 col-md-4">
             <IncomeAndExpenses />
           </div>
-          <div className="col">
+          <div className="col-12 col-md-4">
             <Evaluation />
           </div>
         </div>

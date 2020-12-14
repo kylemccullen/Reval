@@ -45,6 +45,12 @@ const Evaluation = () => {
           label="Medium Term"
           value={evalData.mediumTerm}
         />
+        <StaticField
+          name="mediumReturn"
+          label="Medium Return"
+          value={evalData.mediumReturn}
+          type="percent"
+        />
       </div>
     </>
   );

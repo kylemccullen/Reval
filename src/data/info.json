@@ -14,5 +14,5 @@
   "equityYearOne": "Total equity gained in the first year of ownership.",
   "vacancyRate": "Rate at which the property is vacant.",
   "majorMinorCapEx": "Major and Minor repairs fund for the property.",
-  "mediumTerm": "Expected monthly cash flow of rent minus know and unknown costs. Unknown costs include additional property management expense, vacancy, and major/minor capital expenditures"
+  "mediumTerm": "Expected monthly cash flow of rent minus known and unknown costs. Unknown costs include additional property management expense, vacancy, and major/minor capital expenditures."
 }
