@@ -1,8 +1,8 @@
-import React, { useState, useContext } from "react";
-import { Button, Modal } from "react-bootstrap";
-import { AiFillThunderbolt } from "react-icons/ai";
+import React, { useState, useContext } from 'react';
+import { Button, Modal, Nav } from 'react-bootstrap';
+import { AiFillThunderbolt } from 'react-icons/ai';
 
-import { ThemeContext } from "../../context/ThemeContext";
+import { ThemeContext } from '../../context/ThemeContext';
 
 const TutorialModal = () => {
   const { isDarkMode } = useContext(ThemeContext);
@@ -13,19 +13,21 @@ const TutorialModal = () => {
 
   return (
     <>
-      <div className="div-link px-2 mx-2" onClick={handleShow}>
-        tutorial
-      </div>
+      <Nav.Link onClick={handleShow}>tutorial</Nav.Link>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton className={isDarkMode ? "dark" : ""}>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        className={isDarkMode ? 'is-dark' : ''}
+      >
+        <Modal.Header closeButton className={isDarkMode ? 'dark' : ''}>
           <Modal.Title>Tutorial</Modal.Title>
         </Modal.Header>
-        <Modal.Body className={isDarkMode ? "dark" : ""}>
+        <Modal.Body className={isDarkMode ? 'dark' : ''}>
           <p>A rental property evaluator with sharable links.</p>
           <h4>Editing Fields</h4>
           <p>
-            All non static fields are editable. Static fields are denoted with a{" "}
+            All non static fields are editable. Static fields are denoted with a{' '}
             <AiFillThunderbolt /> icon next to the label. To edit a field click
             on the displayed text, make changes in the text input and hit ENTER
             on your keyboard to submit the changes. Notice that all calculations
@@ -46,11 +48,11 @@ const TutorialModal = () => {
           <h4>Other</h4>
           <p>
             Have a question, improvement feature request or find a bug? Submit
-            an issue{" "}
+            an issue{' '}
             <a href="https://github.com/kmccullen97/reval/issues">here</a>.
           </p>
         </Modal.Body>
-        <Modal.Footer className={isDarkMode ? "dark" : ""}>
+        <Modal.Footer className={isDarkMode ? 'dark' : ''}>
           <Button variant="secondary" onClick={handleClose}>
             Got it
           </Button>
