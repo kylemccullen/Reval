@@ -1,4 +1,4 @@
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
 
 html,
 body,
@@ -17,6 +17,12 @@ body,
 
   .content {
     flex: 1;
+  }
+}
+
+.is-dark {
+  .modal-content {
+    background-color: #333;
   }
 }
 
@@ -59,6 +65,11 @@ body,
 
   .close {
     text-shadow: none;
+  }
+
+  .dropdown-menu {
+    background-color: lighten($dark, 5%);
+    color: $light;
   }
 }
 
@@ -129,6 +140,15 @@ body,
   .indent {
     padding-left: 1rem;
     margin-left: 1rem;
-    border-left: 1px solid color("gray");
+    border-left: 1px solid color('gray');
+  }
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+
+  .form-group {
+    margin: 0;
   }
 }
