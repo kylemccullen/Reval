@@ -1,4 +1,4 @@
-# [Reval](https://kmccullen97.github.io/)
+# [Reval](https://kmccullen97.github.io/reval/)
 
 A rental property evaluator with sharable links.
 
