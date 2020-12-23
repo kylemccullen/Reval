@@ -1,30 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react';
 
-import StaticField from "../ui/StaticField";
-import Input from "../ui/Input";
-import { DataContext } from "../../context/DataContext";
+import StaticField from '../ui/StaticField';
+import Input from '../ui/Input';
+import { DataContext } from '../../context/DataContext';
 
 const Evaluation = () => {
   const { data, evalData } = useContext(DataContext);
   return (
     <>
       <div className="section">
-        <StaticField
-          name="cashFlow"
-          label="Cash Flow"
-          value={evalData.cashFlow}
-        />
+        <StaticField name="cashFlow" label="Cash Flow" value={evalData.cashFlow} />
         <StaticField
           name="cashOnCash"
           label="Cash on Cash"
           value={evalData.cashOnCash}
           type="percent"
         />
-        <StaticField
-          name="equityYearOne"
-          label="Equity Y1"
-          value={evalData.equityYearOne}
-        />
+        <StaticField name="equityYearOne" label="Equity Y1" value={evalData.equityYearOne} />
       </div>
       <div className="section">
         <Input
@@ -40,11 +32,7 @@ const Evaluation = () => {
           percentValueOf={evalData.rent}
           valueAndPercent
         />
-        <StaticField
-          name="mediumTerm"
-          label="Medium Term"
-          value={evalData.mediumTerm}
-        />
+        <StaticField name="mediumTerm" label="Medium Term" value={evalData.mediumTerm} />
         <StaticField
           name="mediumReturn"
           label="Medium Return"

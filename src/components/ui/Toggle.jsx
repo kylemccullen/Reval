@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Toggle = ({ value, toggle, leftIcon, rightIcon, size = 40 }) => {
   const styles = { height: `${size}px`, width: `${size}px`, padding: 0 };
@@ -7,7 +7,7 @@ const Toggle = ({ value, toggle, leftIcon, rightIcon, size = 40 }) => {
   return (
     <div className="btn-group">
       <button
-        className={`btn btn-outline-primary icon ${value ? "" : "active"}`}
+        className={`btn btn-outline-primary icon ${value ? '' : 'active'}`}
         type="button"
         style={styles}
         onClick={() => (value ? toggle() : null)}
@@ -15,7 +15,7 @@ const Toggle = ({ value, toggle, leftIcon, rightIcon, size = 40 }) => {
         {leftIcon}
       </button>
       <button
-        className={`btn btn-outline-primary icon ${value ? "active" : ""}`}
+        className={`btn btn-outline-primary icon ${value ? 'active' : ''}`}
         type="button"
         style={styles}
         onClick={() => (!value ? toggle() : null)}
