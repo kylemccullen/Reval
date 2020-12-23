@@ -14,7 +14,9 @@ const App = () => {
 
   return (
     <div className={`wrapper overflow-auto ${isDarkMode ? 'dark' : ''}`}>
-      <Navbar />
+      <div>
+        <Navbar />
+      </div>
       <div className="content container my-3">
         <div className="row">
           <div className="col-12 col-md-4">
