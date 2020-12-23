@@ -11,7 +11,7 @@ A rental property evaluator with sharable links.
 - **Sharable links.** Editing any field will update the url with a new value. This link can then be shared to others.
 - **Dark mode.** Toggle between light and dark mode in the settings dropdown.
 
-Checkout the [Roadmap](https://github.com/kmccullen97/reval/projects/1) for future features.
+Checkout the [milestones](https://github.com/kmccullen97/reval/milestones) for future features.
 
 # Contributing
 
