@@ -16,10 +16,10 @@ const TutorialModal = () => {
       <Nav.Link onClick={handleShow}>tutorial</Nav.Link>
 
       <Modal show={show} onHide={handleClose} className={isDarkMode ? 'is-dark' : ''}>
-        <Modal.Header closeButton className={isDarkMode ? 'dark' : ''}>
+        <Modal.Header closeButton>
           <Modal.Title>Tutorial</Modal.Title>
         </Modal.Header>
-        <Modal.Body className={isDarkMode ? 'dark' : ''}>
+        <Modal.Body>
           <p>A rental property evaluator with sharable links.</p>
           <h4>Editing Fields</h4>
           <p>
@@ -44,7 +44,7 @@ const TutorialModal = () => {
             <a href="https://github.com/kmccullen97/reval/issues">here</a>.
           </p>
         </Modal.Body>
-        <Modal.Footer className={isDarkMode ? 'dark' : ''}>
+        <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Got it
           </Button>

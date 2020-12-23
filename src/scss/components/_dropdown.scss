@@ -1,0 +1,6 @@
+.dark {
+  .dropdown-menu {
+    background-color: lighten($dark, 5%);
+    color: $light;
+  }
+}

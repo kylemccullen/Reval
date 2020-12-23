@@ -7,7 +7,7 @@ import IncomeAndExpenses from './components/groups/IncomeAndExpense';
 import Evaluation from './components/groups/Evaluation';
 import { DataProvider } from './context/DataContext';
 import { ThemeProvider, ThemeContext } from './context/ThemeContext';
-import './App.scss';
+import './scss/main.scss';
 
 const App = () => {
   const { isDarkMode } = useContext(ThemeContext);

@@ -1,0 +1,15 @@
+.is-dark {
+  .modal-content {
+    background-color: #333;
+    color: #eee;
+  }
+
+  &.modal-content {
+    border-bottom: 1px solid gray;
+  }
+
+  .close {
+    color: #fff;
+    text-shadow: none;
+  }
+}
