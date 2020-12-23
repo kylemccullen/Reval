@@ -24,11 +24,7 @@ const CustomNavbar = () => {
         <Nav className="mr-auto"></Nav>
         <Nav className="align-content-center">
           <TutorialModal />
-          <NavDropdown
-            title="Settings"
-            alignRight
-            className={isDarkMode ? 'dark' : ''}
-          >
+          <NavDropdown title="Settings" alignRight className={isDarkMode ? 'dark' : ''}>
             <div className="d-flex align-items-center justify-content-between px-2">
               <span className="pr-2">Theme</span>
               <Toggle

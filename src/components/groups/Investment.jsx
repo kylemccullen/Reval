@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react';
 
-import Input from "../ui/Input";
-import StaticField from "../ui/StaticField";
-import { DataContext } from "../../context/DataContext";
+import Input from '../ui/Input';
+import StaticField from '../ui/StaticField';
+import { DataContext } from '../../context/DataContext';
 
 const Investment = () => {
   const { data, evalData } = useContext(DataContext);
@@ -11,11 +11,7 @@ const Investment = () => {
     <>
       <div className="section">
         <Input name="homeValue" label="Home Value" value={data.homeValue} />
-        <Input
-          name="purchasePrice"
-          label="Purchase Price"
-          value={data.purchasePrice}
-        />
+        <Input name="purchasePrice" label="Purchase Price" value={data.purchasePrice} />
       </div>
       <div className="section">
         <Input
@@ -32,18 +28,10 @@ const Investment = () => {
           percentValueOf={evalData.purchasePrice}
           valueAndPercent
         />
-        <Input
-          name="additionalCosts"
-          label="Additional Costs"
-          value={data.additionalCosts}
-        />
+        <Input name="additionalCosts" label="Additional Costs" value={data.additionalCosts} />
       </div>
       <div className="section">
-        <StaticField
-          name="upFrontCost"
-          label="Up Front Cost"
-          value={evalData.upFrontCost}
-        />
+        <StaticField name="upFrontCost" label="Up Front Cost" value={evalData.upFrontCost} />
       </div>
     </>
   );
