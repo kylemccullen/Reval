@@ -4,6 +4,7 @@ A rental property evaluator with sharable links.
 
 ![Screenshot](reval-bicolor.png)
 ![Release](https://img.shields.io/github/v/release/kmccullen97/reval)
+![CI](https://github.com/kmccullen97/reval/workflows/CI/badge.svg)
 
 # Features
 
