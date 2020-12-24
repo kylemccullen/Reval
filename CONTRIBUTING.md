@@ -18,6 +18,10 @@ Add a :+1: to issues you want implemented.
 
 - Run the app `yarn start`
 
+- Running tests `yarn test`
+
+- Linting `yarn lint`
+
 ### Submitting a Pull Request
 
 Creating or commenting on the issue you want to work on is the first step to creating a pull request. From there just follow the steps in the **Running the app** section.

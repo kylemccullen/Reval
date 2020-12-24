@@ -11,7 +11,7 @@ import { DataContext } from '../../context/DataContext';
 
 const CustomNavbar = () => {
   const { isDarkMode, toggleDarkMode } = useContext(ThemeContext);
-  const { data } = useContext(DataContext);
+  const { data, valueCompare, setValueCompare } = useContext(DataContext);
 
   return (
     <Navbar expand="lg" variant={isDarkMode ? 'dark' : 'light'}>
@@ -24,13 +24,26 @@ const CustomNavbar = () => {
         <Nav className="mr-auto"></Nav>
         <Nav className="align-content-center">
           <TutorialModal />
-          <NavDropdown
-            title="Settings"
-            alignRight
-            className={isDarkMode ? 'dark' : ''}
-          >
-            <div className="d-flex align-items-center justify-content-between px-2">
-              <span className="pr-2">Theme</span>
+          <NavDropdown title="Settings" alignRight className={isDarkMode ? 'dark' : ''}>
+            <div className="navbar-setting-item">
+              <span className="label">Value Compare</span>
+              <div>
+                {valueCompare !== null && (
+                  <button
+                    className="btn btn-light btn-sm mr-2"
+                    onClick={() => setValueCompare(false)}
+                    title="Remove"
+                  >
+                    Remove
+                  </button>
+                )}
+                <button className="btn btn-primary btn-sm" onClick={() => setValueCompare(true)}>
+                  Set
+                </button>
+              </div>
+            </div>
+            <div className="navbar-setting-item">
+              <span className="label">Theme</span>
               <Toggle
                 value={isDarkMode}
                 toggle={toggleDarkMode}

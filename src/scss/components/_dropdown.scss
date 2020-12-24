@@ -1,0 +1,22 @@
+.dark {
+  .dropdown-menu {
+    background-color: lighten($dark, 5%);
+    color: $light;
+  }
+}
+
+.dropdown-menu {
+  min-width: 18rem;
+}
+
+.navbar-setting-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0.6rem 0.6rem 0.6rem;
+
+  .label {
+    @extend .pr-2;
+  }
+}

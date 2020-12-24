@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react';
 
-import Input from "../ui/Input";
-import StaticField from "../ui/StaticField";
-import Collapsible from "../ui/Collapsible";
-import { DataContext } from "../../context/DataContext";
+import Input from '../ui/Input';
+import StaticField from '../ui/StaticField';
+import Collapsible from '../ui/Collapsible';
+import { DataContext } from '../../context/DataContext';
 
 const IncomeAndExpense = () => {
   const { data, evalData } = useContext(DataContext);
@@ -62,11 +62,7 @@ const IncomeAndExpense = () => {
         </div>
         <div>
           <div className="collapsible">
-            <StaticField
-              name="mortgagePayment"
-              label="Mortgage"
-              value={evalData.mortgagePayment}
-            />
+            <StaticField name="mortgagePayment" label="Mortgage" value={evalData.mortgagePayment} />
             <Collapsible>
               <div className="indent">
                 <Input
