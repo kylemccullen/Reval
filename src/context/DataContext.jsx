@@ -30,6 +30,7 @@ export const DataProvider = ({ children }) => {
   const [data, setData] = useState(defaults);
   const [evalData, setEvalData] = useState({});
   const [warnings, setWarnings] = useState({});
+  const [valueCompare, setValueCompareX] = useState(null);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -61,8 +62,14 @@ export const DataProvider = ({ children }) => {
     setWarnings(evalWarnings);
   };
 
+  const setValueCompare = (active) => {
+    setValueCompareX(active ? evalData : null);
+  };
+
   return (
-    <DataContext.Provider value={{ data, setDataValue, evalData, warnings }}>
+    <DataContext.Provider
+      value={{ data, setDataValue, evalData, warnings, valueCompare, setValueCompare }}
+    >
       {children}
     </DataContext.Provider>
   );

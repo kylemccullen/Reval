@@ -38,9 +38,17 @@ const TutorialModal = () => {
             Want to share your calculations with someone? Each edit updates the link with the new
             value. Just send them the link after you make all your changes.
           </p>
+          <h4>Dark Mode</h4>
+          <p>Toggle between light and dark mode from the settings dropdown.</p>
+          <h4>Value Compare</h4>
+          <p>
+            Value compare allows you go see how changing fields will effect other fields. Click the
+            Set button in the settings dropdown, make changes to some fields and compare the
+            difference from when value compare was set.
+          </p>
           <h4>Other</h4>
           <p>
-            Have a question, improvement feature request or find a bug? Submit an issue{' '}
+            Have a question, improvement, feature request or find a bug? Submit an issue{' '}
             <a href="https://github.com/kmccullen97/reval/issues">here</a>.
           </p>
         </Modal.Body>
