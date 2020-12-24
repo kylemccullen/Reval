@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import Input from './Input';
 import Label from './Label';
+import ValueCompare from '../ValueCompare';
 import Toggle from '../Toggle';
 import { formatValue, calcValueOrPercent } from '../../../helpers';
 import { DataContext } from '../../../context/DataContext';
@@ -112,6 +113,7 @@ const CustomInput = ({
             ) : (
               <div className="text-value" onClick={() => setIsActive(true)}>
                 {getFormattedValue()}
+                <ValueCompare name={name} valueType={valueAndPercent ? 'V' : valueType} />
               </div>
             )}
           </div>

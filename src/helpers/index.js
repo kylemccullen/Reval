@@ -39,6 +39,7 @@ export const calculateEquityGainYearOne = (p, r, n) => {
 };
 
 export const evaluateData = (data) => {
+  const homeValue = parseFloat(data.homeValue);
   const purchasePrice = parseFloat(data.purchasePrice);
   const additionalCosts = parseFloat(data.additionalCosts);
   const rent = parseFloat(data.rent);
@@ -83,6 +84,7 @@ export const evaluateData = (data) => {
   }
 
   const evalData = {
+    homeValue,
     purchasePrice,
     additionalCosts,
     rent,
@@ -94,6 +96,7 @@ export const evaluateData = (data) => {
     downPayment,
     closingCosts,
     upFrontCost,
+    propertyManager,
     mortgagePayment,
     insurance,
     propertyTax,
