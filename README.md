@@ -1,10 +1,10 @@
-# [Reval](https://kmccullen97.github.io/reval/)
+# [Reval](https://kylemccullen.github.io/reval/)
 
 A rental property evaluator with sharable links.
 
 ![Screenshot](reval-bicolor.png)
-![Release](https://img.shields.io/github/v/release/kmccullen97/reval)
-![CI](https://github.com/kmccullen97/reval/workflows/CI/badge.svg)
+![Release](https://img.shields.io/github/v/release/kylemccullen/reval)
+![CI](https://github.com/kylemccullen/reval/workflows/CI/badge.svg)
 
 # Features
 
@@ -13,7 +13,7 @@ A rental property evaluator with sharable links.
 - **Dark mode.** Toggle between light and dark mode in the settings dropdown.
 - **Value Compare.** Set value compare then update fields to compare. Found in the settings dropdown.
 
-Checkout the [milestones](https://github.com/kmccullen97/reval/milestones) for future features.
+Checkout the [milestones](https://github.com/kylemccullen/reval/milestones) for future features.
 
 # Contributing
 
