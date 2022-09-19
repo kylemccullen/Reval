@@ -10,7 +10,7 @@ const increaseCompareGood = [
   'term',
   'cashFlow',
   'cashOnCash',
-  'EquityYearOne',
+  'equityYearOne',
   'mediumTerm',
   'mediumReturn',
 ];
